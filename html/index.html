@@ -106,11 +106,112 @@
         }
 		
 		.single-section {
-            background-color: #f7fbfd;								
-            padding: 1.5rem;										
-            border-radius: 10px;									
-            margin: 20px;
+            background-color: #f7fbfd;								/* Mismo color de fondo que otras secciones */
+            padding: 4rem;										/* Mismo espaciado interno */
+            border-radius: 10px;									/* Bordes redondeados consistentes */
+            margin: 80px;
+			
 		}
+		
+		
+		
+		
+		.simple-slider {
+			margin-inline: auto;
+			position: relative;
+			max-width: 700px;
+			width:90%
+			margin: 40px auto;
+			overflow: hidden;
+			border-radius: 10px;
+			
+			
+		}
+		
+		.simple-slider input {
+			display: none;
+		}
+
+		.slides {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			transition: transform 0.5s ease;
+		}
+
+		.slide {
+			width: 100%;
+			flex-shrink: 0;
+			position: relative;
+			height: 100%;
+		}
+
+		.slide img {
+			width: 100%;
+			height: 550px;
+			object-fit: contain;
+			display:block;
+			opacity: 0.8;
+			
+		}
+
+		.caption {
+			position: absolute;
+			bottom: 20px;
+			left: 0;
+			width: 100%;
+			box-sizing: border-box;
+			text-align: center;
+			background: rgba(13, 60, 86, 0.6);
+			color: #fff;
+			padding: 15px;
+			font-size: 1em;
+			overflow-wrap: break-word;
+			overflow-x: hidden; 
+		}
+
+		#slide1:checked ~ .slides {
+			transform: translateX(0%);
+		}
+
+		#slide2:checked ~ .slides {
+			transform: translateX(-100%);
+		}
+
+		#slide3:checked ~ .slides {
+			transform: translateX(-200%);
+		}
+
+		.navigation {
+			text-align: center;
+			margin-top: 10px;
+		}
+
+		.navigation label {
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			background: #0d3c56;
+			border-radius: 50%;
+			margin: 0 5px;
+			cursor: pointer;
+			transition: background 0.3s;
+		}
+
+		.navigation label:hover {
+			background: #0056b3;
+		}
+
+			
+		aside {
+            flex: 1 1 25%; /* Establece que ocupe el 25% del espacio disponible */
+            background: #f5f9fc; /* Fondo azul muy claro para diferenciarlo */
+            padding: 1.5rem; /* Añade espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            border-left: 4px solid #2c5e86; /* Borde izquierdo más visible con color corporativo */
+            align-self: flex-start; /* Alinea al inicio para que no se estire verticalmente */
+        }
+		
 		
 		@media (max-width: 768px) {
             .header-container {
@@ -149,7 +250,6 @@
             <li><a href="#introduccion">Introducci&oacute;n</a></li>
             <li><a href="#historia">Historia de la Cartograf&iacute;a</a></li>
             <li><a href="#tipos">Tipos de cartograf&iacute;a</a></li>
-            <li><a href="#aplicaciones">Aplicaciones</a></li>
             <li><a href="#peru">Cartograf&iacute;a en el Perú</a></li>
         </ul>
     </nav>
@@ -159,8 +259,124 @@
             <h2 id="introduccion">INTRODUCCIÓN</h2>
             <p>La cartograf&iacute;a es la disciplina que se encarga de representar gr&aacute;ficamente la Tierra y sus caracter&iacute;sticas geogr&aacute;ficas, desde montañas y r&iacute;os hasta ciudades y fronteras. A trav&eacute;s de mapas y planos, los cart&oacute;grafos buscan reflejar la complejidad del mundo que nos rodea de manera clara y precisa. Con una rica historia que se remonta a civilizaciones antiguas, la cartograf&iacute;a ha evolucionado significativamente gracias a avances tecnol&oacute;gicos como la geodesia, la fotogrametr&iacute;a y, m&aacute;s recientemente, los sistemas de informaci&oacute;n geogr&aacute;fica (SIG) y la teledetecci&oacute;n. </p>
 			<p>Los mapas no solo nos ayudan a navegar y entender nuestro entorno, sino que tambi&eacute;n desempeñan un papel crucial en diversas &aacute;reas como la planificaci&oacute;n urbana, el estudio del cambio clim&aacute;tico, la gesti&oacute;n de recursos naturales y la investigaci&oacute;n cient&iacute;fica. En la era digital, la cartograf&iacute;a se ha vuelto m&aacute;s accesible y din&aacute;mica, permitiendo la creaci&oacute;n de mapas interactivos y personalizados que satisfacen las necesidades espec&iacute;ficas de cada usuario. </p>
-        </article>
+        
+	
+			<section class="simple-slider">
+  					<input type="radio" name="slider" id="slide1" checked>
+					<input type="radio" name="slider" id="slide2">
+					<input type="radio" name="slider" id="slide3">
+
+					<div class="slides">
+						<div class="slide s1">
+							<img src="imagen2.jpg" alt="Bedolina">
+							<p class="caption">El Mapa de Bedolina es una famosa roca prehistórica grabada que forma parte del complejo de petroglifos del Valle Camonica en Italia. Es conocido como uno de los mapas topográficos más antiguos, una representación de parcelas cultivadas, caminos de montaña y aldeas, y fue realizado entre el 1400 y el 500 a. C.</p>
+						</div>
+					
+						<div class="slide s2">
+							<img src="imagen3.png" alt="Çatalhöyük">
+							<p class="caption">El mapa de Çatalhöyük fue descubierto en la década de 1960 por el arqueólogo James Mellaart, y se cree que podría haber sido creado con fines rituales o ceremoniales, más que como un simple plano de la ciudad. </p>
+						</div>
+					
+						<div class="slide s3">
+							<img src="imagen4.jpg" alt="La piedra de Saint">
+							<p class="caption">La piedra de Saint-Bélec fue descubierta en 1900, pero permaneció almacenada en un museo durante más de un siglo sin ser estudiada a fondo hasta que en 2014 un equipo de investigadores la analizó y descubrió que se trataba de un mapa antiguo.</p>
+						</div>
+					</div>
+
+					<div class="navigation">
+						<label for="slide1"></label>
+						<label for="slide2"></label>
+						<label for="slide3"></label>
+					</div>
+				</section>
+		</article>
     </section>
+   
+   <section class="single-section">
+        <article>
+			
+            <h2 id="historia">HISTORIA DE LA CARTOGRAF&Iacute;A</h2>
+			
+            <h3>La Prehistoria (antes del 3000 a.C.)</h3>
+			<img src="imagen3.jpg" style="float: right; margin: 40px; width: 400px;">
+			<p>La cartografía tiene sus raíces en la prehistoria, cuando los seres humanos comenzaron a representar su entorno en forma de dibujos y símbolos.Los primeros mapas conocidos datan del período Paleolítico Superior, alrededor del 40.000 a.C. Estos mapas primitivos se encontraban en cuevas y rocas, y mostraban animales, humanos y elementos del paisaje.</p>
+			<p>Algunos ejemplos de estos mapas incluyen:</p>
+			<ul>
+				<li>El mapa de Bedolina data del Paleolítico Superior y muestra un paisaje con figuras humanas y animales.</li>
+				<li>El mapa de Çatalhöyük data del Neolítico y muestra un plano de la ciudad con casas y calles.</li>
+			</ul>
+
+			
+			<img src="imagen5.jpg" style="float: right; margin: 40px; width: 400px;">
+			<h3>La Cartografía en la Antigüedad Clásica (3000 a.C. - 500 d.C.)</h3>
+			<p>Con el surgimiento de las civilizaciones antiguas, la cartografía se convirtió en una herramienta importante para la navegación, el comercio y la guerra. En Mesopotamia, los sumerios crearon mapas en tablillas de arcilla que mostraban la distribución de tierras y recursos. Algunos ejemplos de estos mapas incluyen:</p>
+			<ul>
+				<li>El mapa de Nippur, encontrado en Irak, que data del período acadio y muestra un plano de la ciudad con templos y canales.</li>
+				<li>El mapa de Babilonia, encontrado en Irak, que data del período babilónico y muestra un mapa del mundo conocido.</li>
+			</ul>
+			<p>En Egipto, los faraones encargaron mapas para planificar la construcción de pirámides y canales. Los mapas egipcios solían mostrar el río Nilo y sus inundaciones anuales, que eran cruciales para la agricultura. </p>
+			<img src="imagen6.png" style="float: right; margin: 40px; width: 400px;">
+			<p>En Grecia, los filósofos y geógrafos como Eratóstenes y Estrabón desarrollaron teorías sobre la forma de la Tierra y crearon mapas que reflejaban su comprensión del mundo. Eratóstenes, en particular, es famoso por calcular con notable precisión la circunferencia de la Tierra utilizando la sombra de los rayos del sol en diferentes latitudes.</p>
+			
+			
+			
+			
+			<h3>La Cartografía en la Edad Media (500 - 1500 d.C.)</h3>
+			<p>Durante la Edad Media, la cartografía en Europa se centró en la creación de mapas que reflejaban la visión cristiana del mundo. Los mapas "T-O" mostraban el mundo como un círculo dividido en tres partes: Asia, Europa y África. Estos mapas solían incluir elementos bíblicos y simbólicos, y no siempre eran precisos desde un punto de vista geográfico.</p>
+			<p>Algunos ejemplos de mapas medievales incluyen:</p>
+			<ul>
+				<li>El mapa de Hereford, encontrado en Inglaterra, que data del siglo XIII y muestra un mapa del mundo conocido con elementos bíblicos y simbólicos.</li>
+				<li>El mapa de Ebstorf, encontrado en Alemania, que data del siglo XIII y muestra un mapa del mundo conocido con elementos bíblicos y simbólicos.</li>
+			</ul>	
+			<p>Mientras tanto, en el mundo islámico, los cartógrafos como Al-Idrisi crearon mapas precisos y detallados del mundo conocido. Al-Idrisi trabajó en la corte del rey Roger II de Sicilia y produjo un atlas mundial que incluía mapas de África, Asia y Europa.</p>
+			
+			
+			
+			<h3>La Cartografía en la Era de la Exploración (1500 - 1800 d.C.)</h3>
+			<img src="imagen7.jpg" style="float: right; margin: 40px; width: 400px;">
+			<p>La Era de la Exploración marcó un período de gran avance en la cartografía. Los descubrimientos de nuevos territorios y rutas marítimas llevaron a la creación de mapas más precisos y detallados. Los cartógrafos como Gerardus Mercator y Martin Waldseemüller crearon mapas que reflejaban la nueva comprensión del mundo.</p>
+			<p>La proyección de Mercator, desarrollada en el siglo XVI, se convirtió en un estándar para la navegación marítima y sigue siendo utilizada hoy en día. Sin embargo, también tiene limitaciones, como la distorsión de las formas y tamaños de los continentes cerca de los polos.</p>
+			<p>Algunos ejemplos de mapas de la Era de la Exploración incluyen:</p>
+			
+			<ul>
+				<li>El mapa de Waldseemüller, encontrado en Alemania, que data de 1507 y muestra un mapa del mundo conocido con el nombre "América" por primera vez.</li>
+				<img src="imagen8.webp" style="float: right; margin: 40px; width: 400px;">
+				<li>El mapa de Mercator, encontrado en Bélgica, que data de 1569 y muestra un mapa del mundo conocido con la proyección de Mercator.</li>
+				
+			</ul>
+			
+			
+			<h3>La Cartografía Moderna (1800 - 2000 d.C.)</h3>
+			<p>En el siglo XIX, la cartografía se benefició de avances tecnológicos como la fotografía aérea y la topografía. Los mapas se volvieron más precisos y detallados, y se crearon instituciones cartográficas nacionales para producir y distribuir mapas oficiales.</p>
+			<p>Algunos ejemplos de mapas modernos incluyen:</p>
+			
+			<ul>
+				<li>El mapa topográfico de Estados Unidos, producido por el Servicio Geológico de Estados Unidos (USGS) en el siglo XIX.</li>
+				<li>El mapa de la ciudad de París, producido por el Instituto Geográfico Nacional de Francia en el siglo XIX.</li>
+			</ul>
+			
+			<p>En el siglo XX, la cartografía se revolucionó con la llegada de la tecnología digital y los sistemas de información geográfica (SIG). Los SIG permiten la creación de mapas interactivos y personalizados, y han tenido un impacto significativo en campos como la planificación urbana, la gestión de recursos naturales y la investigación científica.</p>
+			
+			
+			<h3>La Cartografía en la Era Digital (2000 d.C. - presente)</h3>
+			<p>En la era digital, la cartografía ha seguido evolucionando con la llegada de tecnologías como la teledetección, el GPS y la cartografía en línea. Los mapas en línea como Google Maps y OpenStreetMap han democratizado el acceso a la cartografía y han permitido a los usuarios crear y compartir sus propios mapas.</p>
+			<p>La cartografía también se ha vuelto más colaborativa, con proyectos como la cartografía participativa y la cartografía comunitaria. Estos proyectos permiten a las comunidades locales crear mapas que reflejan sus propias necesidades y perspectivas.</p>
+			<p>Algunos ejemplos de proyectos de cartografía digital incluyen:</p>
+			<ul>
+				<li>El proyecto OpenStreetMap, que permite a los usuarios crear y editar mapas en línea de forma colaborativa.</li>
+				<li>El proyecto Google Maps, que permite a los usuarios crear y compartir mapas personalizados en línea.</li>
+			</ul>
+			<br>
+			
+			<div style="text-align: center;">
+				<iframe width="700" height="400" src="https://www.youtube.com/embed/EJ02_GIcW1k?si=4jHhJOp1OSNxchQ2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</iframe>
+			</div>
+			
+			</article>
+    </section>
+   
+   
    
 </body>
 </html>
