@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CartoWeb</title>
-	<style>
+    <title>Carto_web</title>
+    <style>
         body {
             font-family: 'Lucida Sans Unicode', serif;
             margin: 0;
@@ -12,6 +12,8 @@
             background-color: #f5f5f5;
             color: #0d3c56;
             line-height: 1.6;
+			text-align: justify;
+			
         }
         
         .header-container {
@@ -68,41 +70,42 @@
 			color: #fff5ee;
         }
         
+		/* Estilos para la navegacion principal */
 		.main-nav {
-            background-color: #1d334a;                        
-            color: white;                                   
-            text-align: center;                              
-            padding: 0.5rem 0;                               
+            background-color: #1d334a;                        /* Fondo para la barra de navegacion */
+            color: white;                                    /* Texto en color blanco */
+            text-align: center;                              /* Centra los elementos de navegacion */
+            padding: 0.5rem 0;                               /* Aniade un poco de espacio vertical dentro de la barra de navegacion */
         }
         
-        
+        /* Elimina los puntos de lista en la navegacion */
         .main-nav ul {
-            list-style-type: none;                          
-            text-align: center;                             
+            list-style-type: none;                           /* Quita los marcadores de lista */
+            text-align: center;                              /* Centra los elementos de navegacion */
         }
         
-        
+        /* Estilo para los elementos de la lista de navegacion */
         .main-nav ul li {
-            display: inline;                                
-            margin-right: 20px;                              
+            display: inline;                                 /* Coloca los elementos de la lista en linea horizontal */
+            margin-right: 20px;                              /* Aniade espacio entre los elementos de navegacion */
         }
         
-       
+        /* Estilos para los enlaces de navegacion */
         .main-nav ul li a {
-            color: white;                                   
-            text-decoration: none;                             
-            font-weight: 600;                                                              
-            padding: 15px 20px;                             
-            display: inline-block;                         
-            transition: background-color 0.3s, color 0.3s;  
+            color: white;                                   /* Color del texto del enlace */
+            text-decoration: none;                          /* Elimina el subrayado predeterminado de los enlaces */    
+            font-weight: 600;                               /* Hace el texto del enlace un poco mas grueso */                                
+            padding: 15px 20px;                             /* Aniade espacio alrededor del texto del enlace */
+            display: inline-block;                          /* Permite que el padding se aplique correctamente */
+            transition: background-color 0.3s, color 0.3s;  /* Suaviza la transicion de colores al pasar el mouse */
         }    
         
-        
+        /* Estilos para los enlaces de navegacion al pasar el mouse */
         .main-nav ul li a:hover {
-            background-color: #0056b3;                      
-            color: #ffe;                                    
-            text-decoration: none;                          
-            border-radius: 4px;                             
+            background-color: #0056b3;                      /* Cambia el color de fondo al pasar el mouse */
+            color: #ffe;                                    /* Cambia ligeramente el color del texto al pasar el mouse */
+            text-decoration: none;                          /* Mantiene el texto sin subrayar */
+            border-radius: 4px;                             /* Bordes redondeados */
         }
 		
 		.single-section {
@@ -211,7 +214,63 @@
             border-left: 4px solid #2c5e86; /* Borde izquierdo más visible con color corporativo */
             align-self: flex-start; /* Alinea al inicio para que no se estire verticalmente */
         }
+
+        /* Título de la barra lateral */
+        aside h4 {
+            margin-top: 0; /* Elimina el margen superior del título */
+            color: #2c5e86; /* Color azul corporativo para el título */
+        }
+
+        /* Elementos desplegables para información adicional */
+        details {
+            margin-bottom: 1rem; /* Espacio inferior entre elementos desplegables */
+            background: white; /* Fondo blanco para el contenido */
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra suave para efecto de elevación */
+            overflow: hidden; /* Oculta contenido desbordado */
+        }
+
+        /* Cabecera de los elementos desplegables */
+        summary {
+            padding: 1rem; /* Añade espaciado interno */
+            background-color: #f5f5f5; /* Fondo gris claro para el encabezado */
+            cursor: pointer; /* Cambia el cursor para indicar que es clicable */
+            font-weight: 500; /* Establece un grosor de fuente semi-negrita */
+            border-bottom: 1px solid transparent; /* Borde inferior transparente por defecto */
+        }
 		
+		details div {
+            padding: 1rem; /* Añade espaciado interno al contenido */
+        }
+
+        /* Estado abierto de los elementos desplegables */
+        details[open] summary {
+            border-bottom: 1px solid #ddd; /* Añade borde inferior cuando está abierto */
+        }
+
+        /* Figuras para imágenes y diagramas */
+        figure {
+            margin: 2rem 0; /* Añade espacio vertical */
+            padding: 1rem; /* Añade espaciado interno */
+            background-color: #f8f8f8; /* Fondo ligeramente diferenciado */
+            border-radius: 5px; /* Bordes redondeados */
+            text-align: center; /* Centra el contenido de la figura */
+        }
+
+        /* Imágenes dentro de las figuras */
+        figure img {
+            max-width: 100%; /* Asegura que las imágenes no desborden su contenedor */
+            height: auto; /* Mantiene la proporción de aspecto */
+            border-radius: 3px; /* Bordes ligeramente redondeados */
+        }
+
+        /* Leyendas para las figuras */
+        figcaption {
+            margin-top: 0.5rem; /* Espacio superior respecto a la imagen */
+            font-size: 0.9rem; /* Tamaño de texto más pequeño */
+            color: #666; /* Color gris para indicar texto secundario */
+            font-style: italic; /* Estilo itálico para diferenciar */
+        }
 		
 		@media (max-width: 768px) {
             .header-container {
@@ -223,7 +282,7 @@
             }
         }
 		
-	</style>
+    </style>
 </head>
 <body>
 	
@@ -231,7 +290,7 @@
         <div class="title-section">
               <h1>LA CARTOGRAF&Iacute;A</h1>           
             <div class="subtitle">
-                <p>"La cartograf&iacute;a es el lenguaje de los exploradores y el espejo de las culturas." </p>
+                <p>"La cartografía es el lenguaje de los exploradores y el espejo de las culturas." </p>
             </div>
             
             <div class="author-info">
@@ -259,8 +318,6 @@
             <h2 id="introduccion">INTRODUCCIÓN</h2>
             <p>La cartograf&iacute;a es la disciplina que se encarga de representar gr&aacute;ficamente la Tierra y sus caracter&iacute;sticas geogr&aacute;ficas, desde montañas y r&iacute;os hasta ciudades y fronteras. A trav&eacute;s de mapas y planos, los cart&oacute;grafos buscan reflejar la complejidad del mundo que nos rodea de manera clara y precisa. Con una rica historia que se remonta a civilizaciones antiguas, la cartograf&iacute;a ha evolucionado significativamente gracias a avances tecnol&oacute;gicos como la geodesia, la fotogrametr&iacute;a y, m&aacute;s recientemente, los sistemas de informaci&oacute;n geogr&aacute;fica (SIG) y la teledetecci&oacute;n. </p>
 			<p>Los mapas no solo nos ayudan a navegar y entender nuestro entorno, sino que tambi&eacute;n desempeñan un papel crucial en diversas &aacute;reas como la planificaci&oacute;n urbana, el estudio del cambio clim&aacute;tico, la gesti&oacute;n de recursos naturales y la investigaci&oacute;n cient&iacute;fica. En la era digital, la cartograf&iacute;a se ha vuelto m&aacute;s accesible y din&aacute;mica, permitiendo la creaci&oacute;n de mapas interactivos y personalizados que satisfacen las necesidades espec&iacute;ficas de cada usuario. </p>
-        
-	
 			<section class="simple-slider">
   					<input type="radio" name="slider" id="slide1" checked>
 					<input type="radio" name="slider" id="slide2">
@@ -289,6 +346,7 @@
 						<label for="slide3"></label>
 					</div>
 				</section>
+		
 		</article>
     </section>
    
@@ -375,9 +433,155 @@
 			
 			</article>
     </section>
-   
-   
-   
+			
+	<section class="single-section">		
+			<article>
+			
+            <h2 id="tipos">TIPOS DE CARTOGRAFÍA</h2>
+			<p>La cartografía al ser una disciplina que abarca una amplia variedad de técnicas y enfoques para representar el mundo que nos rodea posee diferentes tipos de cartografía que se enfocan en aspectos específicos de la realidad geográfica, desde la forma y características del terreno hasta la distribución de fenómenos sociales y económicos. Cada tipo de cartografía tiene sus propias herramientas y técnicas, y se utiliza para responder a preguntas y necesidades específicas. La elección del tipo de cartografía adecuado depende del propósito y el público objetivo, y puede variar desde la creación de mapas simples hasta la realización de análisis complejos. En general, los tipos de cartografía se pueden clasificar en categorías que reflejan la naturaleza de los datos y la forma en que se representan.</p>
+			
+			<h3> Cartografía Topográfica </h3>
+			<img src="imagen10.jpg" style="float: left; margin: 40px; width: 400px;">
+			<p>La cartografía topográfica se enfoca en la representación detallada de la forma y características del terreno, incluyendo la elevación, la pendiente y la hidrografía. Los mapas topográficos suelen incluir información sobre la vegetación, la geología y la infraestructura, y se utilizan para una variedad de propósitos, desde la planificación urbana hasta la gestión de recursos naturales. La cartografía topográfica es fundamental para entender la forma en que el terreno se comporta y cómo se puede utilizar de manera sostenible.</p>
+			<p>Los mapas topográficos pueden ser utilizados para identificar áreas de riesgo, como zonas de inundación o deslizamientos de tierra, y para planificar la construcción de infraestructuras como carreteras y puentes. La cartografía topográfica también es importante para la gestión de recursos naturales, como la planificación forestal y la conservación de la biodiversidad. Los mapas topográficos pueden ser creados utilizando una variedad de técnicas, incluyendo la fotogrametría y la teledetección. La precisión y la detalle de los mapas topográficos dependen de la escala y la calidad de los datos utilizados. En general, los mapas topográficos son una herramienta valiosa para cualquier persona que necesite entender la forma y características del terreno.</p>
+		
+			<aside>
+                
+				<h4>Aplicaciones</h4>
+                
+                <details>
+                    <summary>Planificación urbana e Ingeniería Civil</summary>
+                    <div>
+                        <ul>
+                            <li>Permite visualizar el terreno para la construcción de carreteras, puentes, túneles y redes de transporte.</li>
+                            <li>Ayuda en la selección de sitios óptimos para edificaciones, evitando zonas inestables o inundables.</li>
+                            <li>Facilita la zonificación urbana, industrial y residencial considerando pendientes, accesibilidad y riesgos naturales.</li>
+                            <li>Posibilidad de repetir mediciones periódicamente</li>
+                            <li>Diseño de redes de agua, alcantarillado y electricidad aprovechando la topografía.</li>
+							<li>Evaluación de cómo proyectos de construcción afectarán el entorno.</li>
+                        </ul>
+                    </div>
+                </details>
+                
+                <details>
+                    <summary>Gestión de recursos naturales e Investigación científica</summary>
+                    <div>
+                        <ul>
+                            <li>Identificación de suelos fértiles, pendientes para cultivos y áreas de conservación.</li>
+                            <li>Delimitación de cuencas hidrográficas, diseño de presas y prevención de inundaciones</li>
+                            <li>Análisis de erosión, deslizamientos o cambios en el paisaje por fenómenos naturales.</li>
+                            <li>Mapeo de ecosistemas, corredores biológicos y áreas protegidas.</li>
+                         </ul>
+                    </div>
+                </details>
+                
+                <details>
+                    <summary> Gestión de emergencias</summary>
+                    <div>
+						<ul>
+                            <li>Identificación de zonas de riesgo (inundaciones, deslizamientos, fallas sísmicas).</li>
+                            <li>Planificación de rutas de evacuación y logística para equipos de rescate.</li>
+                            <li>Evaluación de daños post-desastre (terremotos, huracanes) mediante comparación con mapas previos.</li>
+                            <li>Predicción de propagación de incendios forestales o flujos de lava volcánica.</li>
+                         </ul>
+                       </div>
+                </details>
+                
+                <figure>
+                    <img src="imagen13.jpg" alt="Modelo de mapa para la prevención de desastres">
+                    <figcaption>Aplicaciones del mapa topográfico</figcaption>
+                </figure>
+            </aside>
+			
+			
+		<h3>Cartografía Temática</h3>
+		<img src="imagen14.png" style="float: left; margin: 40px; width: 400px;">
+		<p>La cartografía temática se enfoca en la representación de temas específicos, como la población, la economía, el clima o la geología. Los mapas temáticos suelen utilizar símbolos y colores para representar la distribución y la intensidad de los fenómenos estudiados, y se utilizan para analizar y visualizar datos complejos. La cartografía temática es una herramienta valiosa para la investigación científica y la toma de decisiones, ya que permite visualizar patrones y tendencias en los datos. Los mapas temáticos pueden ser utilizados para analizar la distribución de la población, la economía y los recursos naturales, y para identificar áreas de riesgo y oportunidad. </p>
+		<p>La cartografía temática también es importante para la planificación y la gestión de recursos, ya que puede ser utilizada para evaluar la efectividad de las políticas y programas. Los mapas temáticos pueden ser creados utilizando una variedad de técnicas, incluyendo la estadística y la modelización. La precisión y la detalle de los mapas temáticos dependen de la calidad de los datos utilizados y la habilidad del cartógrafo para representar la información de manera clara y concisa.</p>
+		
+		<aside>
+                
+				<h4>Aplicaciones</h4>
+                
+                <details>
+                    <summary>Agricultura y Desarrollo Rural</summary>
+                    <div>
+                        <ul>
+                            <li>Identificación de zonas óptimas para cultivos específicos (ej. café, maíz, vid).</li>
+                            <li>Mapas de NDVI (Normalized Difference Vegetation Index) para evaluar salud vegetal.</li>
+                            <li>Detección de estrés hídrico o plagas mediante imágenes satelitales.</li>
+                            <li>Cartografía de parcelas para regularización de propiedad.</li>
+                            <li>Planificación de infraestructura rural (caminos, electrificación).</li>
+							<li>Identificación de áreas para proyectos de agroindustria.</li>
+                        </ul>
+                    </div>
+                </details>
+                
+                <details>
+                    <summary>Geología y Minería</summary>
+                    <div>
+                        <ul>
+                            <li>Identificación de suelos fértiles, pendientes para cultivos y áreas de conservación.</li>
+                            <li>Delimitación de cuencas hidrográficas, diseño de presas y prevención de inundaciones</li>
+                            <li>Análisis de erosión, deslizamientos o cambios en el paisaje por fenómenos naturales.</li>
+                            <li>Mapas de susceptibilidad a deslizamientos, hundimientos o sismos.</li>
+							<li>Monitoreo de impactos ambientales (deforestación, contaminación).</li>
+                         </ul>
+                    </div>
+                </details>
+                
+                <details>
+                    <summary> Otras aplicaciones</summary>
+                    <div>
+						<ul>
+                            <li>Mapas de incidencia de enfermedades (malaria, dengue).</li>
+                            <li>Cartografía de rutas ecoturísticas.</li>
+                            <li>Mapas de conflictos territoriales.</li>
+                            <li>Mapas de usos del suelo (residencial, industrial, comercial).</li>
+                         </ul>
+                       </div>
+                </details>
+                
+                <figure>
+                    <img src="imagen16.jpg" alt="mapa_tematico">
+                    <figcaption>Aplicaciones del mapa tematico</figcaption>
+                </figure>
+            </aside>
+		
+		<h3>Cartografía Digital</h3>
+		<p>La cartografía digital se enfoca en la creación y el análisis de mapas digitales utilizando tecnologías de información geográfica (SIG) y otros software especializados. Los mapas digitales pueden ser interactivos y personalizados, y se utilizan en una variedad de aplicaciones, desde la navegación hasta la planificación urbana y la gestión de recursos naturales. La cartografía digital es una herramienta valiosa para la investigación científica y la toma de decisiones, ya que permite visualizar y analizar datos complejos de manera rápida y eficiente. Los mapas digitales pueden ser utilizados para analizar la forma en que los fenómenos geográficos se distribuyen en el espacio, y para identificar patrones y tendencias en los datos.</p>
+		<p>La cartografía digital también es importante para la comunicación de información compleja, ya que puede ser utilizada para presentar datos de manera clara y concisa. Los mapas digitales pueden ser creados utilizando una variedad de técnicas, incluyendo la programación y la modelización. La precisión y la detalle de los mapas digitales dependen de la calidad de los datos utilizados y la habilidad del cartógrafo para representar la información de manera clara y concisa.</p>
+		
+		
+		
+		</article>	
+	</section>		
+				
+		
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 </body>
 </html>
 	
