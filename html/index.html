@@ -282,6 +282,82 @@
             }
         }
 		
+		
+		
+		.scale-section {
+		background-color: #f7fbfd;
+		padding: 4rem;
+		border-radius: 10px;
+		margin: 0px auto;
+		max-width: 400px;
+		font-size:20px;
+		}
+
+		.scale-section h4 {
+		text-align: center;
+		color: #0d3c56;
+		}
+
+		.scale-section form .form-group {
+		margin-bottom: 15px;
+		}
+
+		.scale-section label {
+		display: block;
+		margin-bottom: 5px;
+		font-weight: bold;
+		}
+
+		.scale-section input[type="number"] {
+		width: 100%;
+		padding: 10px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		font-size: 16px;
+		box-sizing: border-box;
+		}
+
+		.scale-section button {
+		background-color: #1d334a;
+		color: white;
+		padding: 10px 15px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		font-size: 16px;
+		display: block;
+		width: 100%;
+		margin-top: 20px;
+		}
+
+		.scale-section button:hover {
+		background-color: #0056b3;
+		}
+
+		.scale-section .resultado {
+		margin-top: 20px;
+		padding: 15px;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		background-color: #f9f9f9;
+		}
+
+		.scale-section .hidden {
+		display: none;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
     </style>
 </head>
 <body>
@@ -309,7 +385,7 @@
             <li><a href="#introduccion">Introducci&oacute;n</a></li>
             <li><a href="#historia">Historia de la Cartograf&iacute;a</a></li>
             <li><a href="#tipos">Tipos de cartograf&iacute;a</a></li>
-            <li><a href="#peru">Cartograf&iacute;a en el Perú</a></li>
+            <li><a href="#mapa">Los mapas</a></li>
         </ul>
     </nav>
     
@@ -606,7 +682,164 @@
 	 <section class="single-section">
         <article>
 			
-            <h2 id="historia">CARTOGRAFÍA EN EL PERÚ</h2>
+            <h2 id="mapa">LOS MAPAS</h2>
+			<p>Los mapas también conocidos como cartas son <b> representaciones gráficas</b> de la realidad geográfica (Tierra) a través de una superficie plana.</p>
+			<h3>Elementos principales</h3>
+			<h4>Título</h4>
+				<ul>
+					<li>Indica el tema o propósito del mapa a través de palabras </li>
+					<li>Debe ser conciso pero descriptivo</li>
+					<li>Ejemplo:<em> Mapa político de América del Norte</em> </li>
+				</ul>
+					
+					
+                <h4>Escala</h4>
+				<ul>
+				<li> Relación entre las distancias del mapa y la realidad.</li> 
+					<li> Tipos de escalas:</li>
+						<ul>
+						 <li><b> Escala gráfica</b>: representada a través de una barra dividida en segmentos</li>
+						<br>					 			 
+						 <center><img src="escala1.jpg" alt="Escala gráfica" width= "300"></center>
+						 <br><br>
+						 <li><b> Escala numérica</b>: Indica cuantas veces se debe de aumentar el mapa para que el dibujo esté a tamaño real. 
+						 <br>Se expresa con un número o una fracción.</br>
+						 <br> Ejemplo: <br> <center>
+						 
+						 
+						 <table border="1" cellspacing="0" cellpadding="5">
+							<thead>
+							<tr bgcolor="#F0F0F0">
+									<th>Escala Numérica</th>
+									<th>Equivalencia en Realidad</th>
+									<th>Uso Principal</th>
+							</tr>
+							</thead>
+							
+							<tbody>
+								<tr>
+									<td><strong>1:100</strong></td>
+									<td>1 cm = 1 m</td>
+                
+									<td>Planos arquitectónicos, detalles constructivos</td>
+								</tr>
+								
+								<tr>
+									<td><strong>1:1,000</strong></td>
+									<td>1 cm = 10 m</td>
+									<td>Catastro urbano, parcelas</td>
+								</tr>
+								<tr>
+									<td><strong>1:5,000</strong></td>
+									<td>1 cm = 50 m</td>
+									<td>Planificación urbana, infraestructuras</td>
+								</tr>
+								<tr>
+									<td><strong>1:25,000</strong></td>
+									<td>1 cm = 250 m</td>
+									<td>Mapas topográficos, senderismo</td>
+								</tr>
+								<tr>
+									<td><strong>1:50,000</strong></td>
+									<td>1 cm = 500 m</td>
+                
+									<td>Cartografía regional, estudios ambientales</td>
+							</tr>
+							</tbody>
+						</table>
+						 </center>
+						 
+						 
+						 </li> </ul>
+						 <br>
+						 
+                </ul>
+				
+				<section class="scale-section">
+				<h4>Calculadora de Escala de Mapa</h4>
+				<form id="escalaForm">
+					<div class="form-group">
+						<label for="distMapa">Distancia en el mapa (cm):</label>
+						<input type="number" id="distMapa" name="distMapa" step="any" required>
+					</div>
+
+					<div class="form-group">
+						<label for="distReal">Distancia real (cm):</label>
+						<input type="number" id="distReal" name="distReal" step="any" required>
+					</div>
+
+					<button type="submit">Calcular Escala</button>
+				</form>
+
+					<div class="resultado hidden" id="resultado">
+					<h4>Resultado</h4>
+					<p id="textoResultado"></p>
+					</div>
+				</section>
+	<script>
+		alert ("Bienvenidos a Cartoweb");
+		document.getElementById('escalaForm').addEventListener('submit', function(e) {
+		e.preventDefault();
+			let distMapa = parseFloat(document.getElementById('distMapa').value);
+			let distReal = parseFloat(document.getElementById('distReal').value);
+			let textoResultado = document.getElementById('textoResultado');
+			let resultadoDiv = document.getElementById('resultado');
+
+		if (isNaN(distMapa) || isNaN(distReal) || distMapa <= 0 || distReal <= 0) {
+		textoResultado.textContent = "Por favor, ingrese valores válidos mayores que cero.";
+		} else {
+		let escala = distReal / distMapa;
+		textoResultado.textContent = `La escala es 1 : ${escala.toFixed(0)}`;
+		}
+
+		resultadoDiv.classList.remove('hidden');
+		});
+	</script>			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<h4>Simbología o leyenda</h4>
+					<p>La <b>simbología cartográfica</b> es el conjunto de figuras, líneas, puntos y colores utilizados en los mapas para representar diferentes elementos del territorio.</p>
+					<p>La <b>leyenda</b> del mapa, por otro lado, es el apartado donde se explica el significado de estos símbolos, facilitando su interpretación.</p>
+					<p>En otras palabras, la simbología hace referencia a los signos en sí, mientras que la leyenda es la clave que permite entenderlos. </p>
+					<center>
+					<img src="leyenda.png" alt="Ejemplo de simbologia-leyenda" width="300">
+					</center>
+					<br>
+					
+				<h4>Rosa de los vientos</h4>
+					<p> Es un <b>símbolo gráfico circular</b> que tiene marcado alrededor los rumbos en los que se divide la circunferencia del horizonte.</p>
+					<p>Se utiliza para representar las direcciones geográficas y cardinales en un mapa.</p>
+					<center>
+					<img src="vientos.jpg" alt="Ejemplo de rosa de los vientos" width="200"> 
+					</center>
+					
+				<h4>Coordenadas geográficas</h4>
+					<p>Son las líneas horizontales y verticales que se aprecian, y sirven para ubicar cualquier lugar en el mapa al señalar su <em>latitud </em> <b> (líneas horizontales)</b> y <em>longitud </em><b>(líneas verticales)</b></p>
+					<center>
+					<img src="coordenadas.jpg" alt="Ejemplo de coordenas geográficas" width="200">
+					</center>
+					<br>
+					<br><br><br>			
 			
 		</article>
 		
