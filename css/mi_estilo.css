@@ -336,6 +336,13 @@
             .title-section, .image-section {
                 padding: 20px;
             }
+			.main-section {
+                grid-template-columns: 1fr; 
+            }
+            .main-nav ul li {
+                display: block;
+                margin: 0; 
+            }
         }
 	
   
