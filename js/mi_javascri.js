@@ -1,3 +1,10 @@
+const BLANCO = " ";
+            let nombreUser =prompt("Ingrese su nombre: ");
+            var resultado = "Bienvenido:" + BLANCO + nombreUser;
+            console.log(resultado);
+			
+
+
 document.getElementById('escalaForm').addEventListener('submit', function(e) {
 		e.preventDefault();
 			let distMapa = parseFloat(document.getElementById('distMapa').value);

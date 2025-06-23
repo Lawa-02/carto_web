@@ -353,6 +353,14 @@
 		display: none;
 		}
 		
+		 .contenedor {
+            max-width: 600px;
+            margin: 0 auto;
+          
+           
+            
+		
+		
 		@media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -377,6 +385,16 @@
 				float: right !important;
 				margin: 0 0 20px 40px !important;
 			}
+			
+			.contenedor {
+                padding: 20px;
+            }
+            
+            button {
+                width: auto;
+            }
+			
+			
 		}
 	
   
