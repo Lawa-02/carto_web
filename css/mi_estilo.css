@@ -353,12 +353,17 @@
 		display: none;
 		}
 		
-		 .contenedor {
+		footer {background-color: #0d3c56; /* Fondo oscuro para el pie de página */
+            color: white; /* Texto claro para contraste */
+            padding: 2rem 0; /* Añade espacio vertical */
+            margin-top: 2rem; /* Añade espacio superior */
+			text-align: center;
+        }
+		
+		
+		.contenedor {
             max-width: 600px;
             margin: 0 auto;
-          
-           
-            
 		
 		
 		@media (max-width: 768px) {
