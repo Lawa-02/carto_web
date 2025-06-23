@@ -1,0 +1,341 @@
+
+        body {
+            font-family: 'Lucida Sans Unicode', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #0d3c56;
+            line-height: 1.6;
+			text-align: justify;
+			
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 0px;
+            background-color: #0d3c56;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            width: 100%; 
+			margin: 2px 0;
+        }
+        
+        .title-section {
+            flex: 1;
+            text-align: center;
+            padding: 0 30px;
+        }
+        
+        .image-section {
+            flex: 2;
+            text-align: center;
+        }
+        
+        .map-image {
+            max-width: 100%;
+            height: auto;
+            max-height: 800px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+			font-family: 'Segoe UI', serif;
+			font-size: 4.5em;
+			text-align: center;
+            margin-bottom: 10px;
+            color: #f9f9f7;
+            font-weight: normal;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            font-style: italic;
+            margin: 25px 0;
+            color: #cdcdc0;
+        }
+        
+        .author-info {
+            margin-top: 40px;
+            font-size: 0.9em;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+			color: #fff5ee;
+        }
+        
+		/* Estilos para la navegacion principal */
+		.main-nav {
+            background-color: #1d334a;                       
+            color: white;                                   
+            text-align: center;                             
+            padding: 0.5rem 0;                              
+        }
+        
+        /* Elimina los puntos de lista en la navegacion */
+        .main-nav ul {
+            list-style-type: none;                          
+            text-align: center;                              
+        }
+        
+        /* Estilo para los elementos de la lista de navegacion */
+        .main-nav ul li {
+            display: inline;                                
+            margin-right: 20px;                              
+        }
+        
+        /* Estilos para los enlaces de navegacion */
+        .main-nav ul li a {
+            color: white;                                 
+            text-decoration: none;                             
+            font-weight: 600;                                                           
+            padding: 15px 20px;                             
+            display: inline-block;                          
+            transition: background-color 0.3s, color 0.3s; 
+        }    
+        
+        /* Estilos para los enlaces de navegacion al pasar el mouse */
+        .main-nav ul li a:hover {
+            background-color: #0056b3;                      
+            color: #ffe;                                    
+            text-decoration: none;                          
+            border-radius: 4px;                             
+        }
+		
+		.single-section {
+            background-color: #f7fbfd;								
+            padding: 4rem;										
+            border-radius: 10px;									
+            margin: 80px;
+			
+		}
+		
+		
+		
+		
+		.simple-slider {
+			margin-inline: auto;
+			position: relative;
+			max-width: 700px;
+			width:90%
+			margin: 40px auto;
+			overflow: hidden;
+			border-radius: 10px;
+			
+			
+		}
+		
+		.simple-slider input {
+			display: none;
+		}
+
+		.slides {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			transition: transform 0.5s ease;
+		}
+
+		.slide {
+			width: 100%;
+			flex-shrink: 0;
+			position: relative;
+			height: 100%;
+		}
+
+		.slide img {
+			width: 100%;
+			height: 550px;
+			object-fit: contain;
+			display:block;
+			opacity: 0.8;
+			
+		}
+
+		.caption {
+			position: absolute;
+			bottom: 20px;
+			left: 0;
+			width: 100%;
+			box-sizing: border-box;
+			text-align: center;
+			background: rgba(13, 60, 86, 0.6);
+			color: #fff;
+			padding: 15px;
+			font-size: 1em;
+			overflow-wrap: break-word;
+			overflow-x: hidden; 
+		}
+
+		#slide1:checked ~ .slides {
+			transform: translateX(0%);
+		}
+
+		#slide2:checked ~ .slides {
+			transform: translateX(-100%);
+		}
+
+		#slide3:checked ~ .slides {
+			transform: translateX(-200%);
+		}
+
+		.navigation {
+			text-align: center;
+			margin-top: 10px;
+		}
+
+		.navigation label {
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			background: #0d3c56;
+			border-radius: 50%;
+			margin: 0 5px;
+			cursor: pointer;
+			transition: background 0.3s;
+		}
+
+		.navigation label:hover {
+			background: #0056b3;
+		}
+
+			
+		aside {
+            flex: 1 1 25%; /* Establece que ocupe el 25% del espacio disponible */
+            background: #f5f9fc; /* Fondo azul muy claro para diferenciarlo */
+            padding: 1.5rem; /* Añade espaciado interno */
+            border-radius: 5px; /* Bordes redondeados */
+            border-left: 4px solid #2c5e86; /* Borde izquierdo más visible con color corporativo */
+            align-self: flex-start; /* Alinea al inicio para que no se estire verticalmente */
+        }
+
+        /* Título de la barra lateral */
+        aside h4 {
+            margin-top: 0; /* Elimina el margen superior del título */
+            color: #2c5e86; /* Color azul corporativo para el título */
+        }
+
+        /* Elementos desplegables para información adicional */
+        details {
+            margin-bottom: 1rem; /* Espacio inferior entre elementos desplegables */
+            background: white; /* Fondo blanco para el contenido */
+            border-radius: 5px; /* Bordes redondeados */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra suave para efecto de elevación */
+            overflow: hidden; /* Oculta contenido desbordado */
+        }
+
+        /* Cabecera de los elementos desplegables */
+        summary {
+            padding: 1rem; /* Añade espaciado interno */
+            background-color: #f5f5f5; /* Fondo gris claro para el encabezado */
+            cursor: pointer; /* Cambia el cursor para indicar que es clicable */
+            font-weight: 500; /* Establece un grosor de fuente semi-negrita */
+            border-bottom: 1px solid transparent; /* Borde inferior transparente por defecto */
+        }
+		
+		details div {
+            padding: 1rem; /* Añade espaciado interno al contenido */
+        }
+
+        /* Estado abierto de los elementos desplegables */
+        details[open] summary {
+            border-bottom: 1px solid #ddd; /* Añade borde inferior cuando está abierto */
+        }
+
+        /* Figuras para imágenes y diagramas */
+        figure {
+            margin: 2rem 0; /* Añade espacio vertical */
+            padding: 1rem; /* Añade espaciado interno */
+            background-color: #f8f8f8; /* Fondo ligeramente diferenciado */
+            border-radius: 5px; /* Bordes redondeados */
+            text-align: center; /* Centra el contenido de la figura */
+        }
+
+        /* Imágenes dentro de las figuras */
+        figure img {
+            max-width: 100%; /* Asegura que las imágenes no desborden su contenedor */
+            height: auto; /* Mantiene la proporción de aspecto */
+            border-radius: 3px; /* Bordes ligeramente redondeados */
+        }
+
+        /* Leyendas para las figuras */
+        figcaption {
+            margin-top: 0.5rem; /* Espacio superior respecto a la imagen */
+            font-size: 0.9rem; /* Tamaño de texto más pequeño */
+            color: #666; /* Color gris para indicar texto secundario */
+            font-style: italic; /* Estilo itálico para diferenciar */
+        }
+		
+		.scale-section {
+		background-color: #f7fbfd;
+		padding: 4rem;
+		border-radius: 10px;
+		margin: 0px auto;
+		max-width: 400px;
+		font-size:20px;
+		}
+
+		.scale-section h4 {
+		text-align: center;
+		color: #0d3c56;
+		}
+
+		.scale-section form .form-group {
+		margin-bottom: 15px;
+		}
+
+		.scale-section label {
+		display: block;
+		margin-bottom: 5px;
+		font-weight: bold;
+		}
+
+		.scale-section input[type="number"] {
+		width: 100%;
+		padding: 10px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		font-size: 16px;
+		box-sizing: border-box;
+		}
+
+		.scale-section button {
+		background-color: #1d334a;
+		color: white;
+		padding: 10px 15px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		font-size: 16px;
+		display: block;
+		width: 100%;
+		margin-top: 20px;
+		}
+
+		.scale-section button:hover {
+		background-color: #0056b3;
+		}
+
+		.scale-section .resultado {
+		margin-top: 20px;
+		padding: 15px;
+		border: 1px solid #ddd;
+		border-radius: 5px;
+		background-color: #f9f9f9;
+		}
+
+		.scale-section .hidden {
+		display: none;
+		}
+		
+		@media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .title-section, .image-section {
+                padding: 20px;
+            }
+        }
+	
+  

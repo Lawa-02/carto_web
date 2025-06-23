@@ -3,362 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carto_web</title>
-    <style>
-        body {
-            font-family: 'Lucida Sans Unicode', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #0d3c56;
-            line-height: 1.6;
-			text-align: justify;
-			
-        }
-        
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0px 0px;
-            background-color: #0d3c56;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            width: 100%; 
-			margin: 2px 0;
-        }
-        
-        .title-section {
-            flex: 1;
-            text-align: center;
-            padding: 0 30px;
-        }
-        
-        .image-section {
-            flex: 2;
-            text-align: center;
-        }
-        
-        .map-image {
-            max-width: 100%;
-            height: auto;
-            max-height: 800px;
-            border-radius: 4px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        h1 {
-			font-family: 'Segoe UI', serif;
-			font-size: 4.5em;
-			text-align: center;
-            margin-bottom: 10px;
-            color: #f9f9f7;
-            font-weight: normal;
-        }
-        
-        .subtitle {
-            font-size: 1.1em;
-            font-style: italic;
-            margin: 25px 0;
-            color: #cdcdc0;
-        }
-        
-        .author-info {
-            margin-top: 40px;
-            font-size: 0.9em;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-			color: #fff5ee;
-        }
-        
-		/* Estilos para la navegacion principal */
-		.main-nav {
-            background-color: #1d334a;                        /* Fondo para la barra de navegacion */
-            color: white;                                    /* Texto en color blanco */
-            text-align: center;                              /* Centra los elementos de navegacion */
-            padding: 0.5rem 0;                               /* Aniade un poco de espacio vertical dentro de la barra de navegacion */
-        }
-        
-        /* Elimina los puntos de lista en la navegacion */
-        .main-nav ul {
-            list-style-type: none;                           /* Quita los marcadores de lista */
-            text-align: center;                              /* Centra los elementos de navegacion */
-        }
-        
-        /* Estilo para los elementos de la lista de navegacion */
-        .main-nav ul li {
-            display: inline;                                 /* Coloca los elementos de la lista en linea horizontal */
-            margin-right: 20px;                              /* Aniade espacio entre los elementos de navegacion */
-        }
-        
-        /* Estilos para los enlaces de navegacion */
-        .main-nav ul li a {
-            color: white;                                   /* Color del texto del enlace */
-            text-decoration: none;                          /* Elimina el subrayado predeterminado de los enlaces */    
-            font-weight: 600;                               /* Hace el texto del enlace un poco mas grueso */                                
-            padding: 15px 20px;                             /* Aniade espacio alrededor del texto del enlace */
-            display: inline-block;                          /* Permite que el padding se aplique correctamente */
-            transition: background-color 0.3s, color 0.3s;  /* Suaviza la transicion de colores al pasar el mouse */
-        }    
-        
-        /* Estilos para los enlaces de navegacion al pasar el mouse */
-        .main-nav ul li a:hover {
-            background-color: #0056b3;                      /* Cambia el color de fondo al pasar el mouse */
-            color: #ffe;                                    /* Cambia ligeramente el color del texto al pasar el mouse */
-            text-decoration: none;                          /* Mantiene el texto sin subrayar */
-            border-radius: 4px;                             /* Bordes redondeados */
-        }
-		
-		.single-section {
-            background-color: #f7fbfd;								/* Mismo color de fondo que otras secciones */
-            padding: 4rem;										/* Mismo espaciado interno */
-            border-radius: 10px;									/* Bordes redondeados consistentes */
-            margin: 80px;
-			
-		}
-		
-		
-		
-		
-		.simple-slider {
-			margin-inline: auto;
-			position: relative;
-			max-width: 700px;
-			width:90%
-			margin: 40px auto;
-			overflow: hidden;
-			border-radius: 10px;
-			
-			
-		}
-		
-		.simple-slider input {
-			display: none;
-		}
-
-		.slides {
-			display: flex;
-			width: 100%;
-			height: 100%;
-			transition: transform 0.5s ease;
-		}
-
-		.slide {
-			width: 100%;
-			flex-shrink: 0;
-			position: relative;
-			height: 100%;
-		}
-
-		.slide img {
-			width: 100%;
-			height: 550px;
-			object-fit: contain;
-			display:block;
-			opacity: 0.8;
-			
-		}
-
-		.caption {
-			position: absolute;
-			bottom: 20px;
-			left: 0;
-			width: 100%;
-			box-sizing: border-box;
-			text-align: center;
-			background: rgba(13, 60, 86, 0.6);
-			color: #fff;
-			padding: 15px;
-			font-size: 1em;
-			overflow-wrap: break-word;
-			overflow-x: hidden; 
-		}
-
-		#slide1:checked ~ .slides {
-			transform: translateX(0%);
-		}
-
-		#slide2:checked ~ .slides {
-			transform: translateX(-100%);
-		}
-
-		#slide3:checked ~ .slides {
-			transform: translateX(-200%);
-		}
-
-		.navigation {
-			text-align: center;
-			margin-top: 10px;
-		}
-
-		.navigation label {
-			display: inline-block;
-			width: 15px;
-			height: 15px;
-			background: #0d3c56;
-			border-radius: 50%;
-			margin: 0 5px;
-			cursor: pointer;
-			transition: background 0.3s;
-		}
-
-		.navigation label:hover {
-			background: #0056b3;
-		}
-
-			
-		aside {
-            flex: 1 1 25%; /* Establece que ocupe el 25% del espacio disponible */
-            background: #f5f9fc; /* Fondo azul muy claro para diferenciarlo */
-            padding: 1.5rem; /* Añade espaciado interno */
-            border-radius: 5px; /* Bordes redondeados */
-            border-left: 4px solid #2c5e86; /* Borde izquierdo más visible con color corporativo */
-            align-self: flex-start; /* Alinea al inicio para que no se estire verticalmente */
-        }
-
-        /* Título de la barra lateral */
-        aside h4 {
-            margin-top: 0; /* Elimina el margen superior del título */
-            color: #2c5e86; /* Color azul corporativo para el título */
-        }
-
-        /* Elementos desplegables para información adicional */
-        details {
-            margin-bottom: 1rem; /* Espacio inferior entre elementos desplegables */
-            background: white; /* Fondo blanco para el contenido */
-            border-radius: 5px; /* Bordes redondeados */
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra suave para efecto de elevación */
-            overflow: hidden; /* Oculta contenido desbordado */
-        }
-
-        /* Cabecera de los elementos desplegables */
-        summary {
-            padding: 1rem; /* Añade espaciado interno */
-            background-color: #f5f5f5; /* Fondo gris claro para el encabezado */
-            cursor: pointer; /* Cambia el cursor para indicar que es clicable */
-            font-weight: 500; /* Establece un grosor de fuente semi-negrita */
-            border-bottom: 1px solid transparent; /* Borde inferior transparente por defecto */
-        }
-		
-		details div {
-            padding: 1rem; /* Añade espaciado interno al contenido */
-        }
-
-        /* Estado abierto de los elementos desplegables */
-        details[open] summary {
-            border-bottom: 1px solid #ddd; /* Añade borde inferior cuando está abierto */
-        }
-
-        /* Figuras para imágenes y diagramas */
-        figure {
-            margin: 2rem 0; /* Añade espacio vertical */
-            padding: 1rem; /* Añade espaciado interno */
-            background-color: #f8f8f8; /* Fondo ligeramente diferenciado */
-            border-radius: 5px; /* Bordes redondeados */
-            text-align: center; /* Centra el contenido de la figura */
-        }
-
-        /* Imágenes dentro de las figuras */
-        figure img {
-            max-width: 100%; /* Asegura que las imágenes no desborden su contenedor */
-            height: auto; /* Mantiene la proporción de aspecto */
-            border-radius: 3px; /* Bordes ligeramente redondeados */
-        }
-
-        /* Leyendas para las figuras */
-        figcaption {
-            margin-top: 0.5rem; /* Espacio superior respecto a la imagen */
-            font-size: 0.9rem; /* Tamaño de texto más pequeño */
-            color: #666; /* Color gris para indicar texto secundario */
-            font-style: italic; /* Estilo itálico para diferenciar */
-        }
-		
-		@media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-            }
-            
-            .title-section, .image-section {
-                padding: 20px;
-            }
-        }
-		
-		
-		
-		.scale-section {
-		background-color: #f7fbfd;
-		padding: 4rem;
-		border-radius: 10px;
-		margin: 0px auto;
-		max-width: 400px;
-		font-size:20px;
-		}
-
-		.scale-section h4 {
-		text-align: center;
-		color: #0d3c56;
-		}
-
-		.scale-section form .form-group {
-		margin-bottom: 15px;
-		}
-
-		.scale-section label {
-		display: block;
-		margin-bottom: 5px;
-		font-weight: bold;
-		}
-
-		.scale-section input[type="number"] {
-		width: 100%;
-		padding: 10px;
-		border: 1px solid #ddd;
-		border-radius: 4px;
-		font-size: 16px;
-		box-sizing: border-box;
-		}
-
-		.scale-section button {
-		background-color: #1d334a;
-		color: white;
-		padding: 10px 15px;
-		border: none;
-		border-radius: 4px;
-		cursor: pointer;
-		font-size: 16px;
-		display: block;
-		width: 100%;
-		margin-top: 20px;
-		}
-
-		.scale-section button:hover {
-		background-color: #0056b3;
-		}
-
-		.scale-section .resultado {
-		margin-top: 20px;
-		padding: 15px;
-		border: 1px solid #ddd;
-		border-radius: 5px;
-		background-color: #f9f9f9;
-		}
-
-		.scale-section .hidden {
-		display: none;
-		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-    </style>
+	<title>Carto_web</title>
+	<link href="./css/mi_estilo.css" rel="stylesheet"/>
 </head>
 <body>
 	
@@ -376,7 +22,7 @@
         </div>
         
         <div class="image-section">
-            <img src="mapa-antiguo.gif" alt="Mapa antiguo" class="map-image">
+            <img src="./imagenes/mapa-antiguo.gif" alt="Mapa antiguo" class="map-image">
         </div>
     </header>
 	
@@ -401,17 +47,17 @@
 
 					<div class="slides">
 						<div class="slide s1">
-							<img src="imagen2.jpg" alt="Bedolina">
-							<p class="caption">El Mapa de Bedolina es una famosa roca prehistórica grabada que forma parte del complejo de petroglifos del Valle Camonica en Italia. Es conocido como uno de los mapas topográficos más antiguos, una representación de parcelas cultivadas, caminos de montaña y aldeas, y fue realizado entre el 1400 y el 500 a. C.</p>
+							<img src="./imagenes/imagen2.jpg" alt="Bedolina">
+							<p class="caption">El Mapa de Bedolina es una famosa roca prehist&oacute;rica grabada que forma parte del complejo de petroglifos del Valle Camonica en Italia. Es conocido como uno de los mapas topogr&aacute;ficos m&aacute;s antiguos, una representaci&oacute;n de parcelas cultivadas, caminos de montaña y aldeas, y fue realizado entre el 1400 y el 500 a. C.</p>
 						</div>
 					
 						<div class="slide s2">
-							<img src="imagen3.png" alt="Çatalhöyük">
+							<img src="./imagenes/imagen3.png" alt="Çatalhöyük">
 							<p class="caption">El mapa de Çatalhöyük fue descubierto en la década de 1960 por el arqueólogo James Mellaart, y se cree que podría haber sido creado con fines rituales o ceremoniales, más que como un simple plano de la ciudad. </p>
 						</div>
 					
 						<div class="slide s3">
-							<img src="imagen4.jpg" alt="La piedra de Saint">
+							<img src="./imagenes/imagen4.jpg" alt="La piedra de Saint">
 							<p class="caption">La piedra de Saint-Bélec fue descubierta en 1900, pero permaneció almacenada en un museo durante más de un siglo sin ser estudiada a fondo hasta que en 2014 un equipo de investigadores la analizó y descubrió que se trataba de un mapa antiguo.</p>
 						</div>
 					</div>
@@ -432,7 +78,7 @@
             <h2 id="historia">HISTORIA DE LA CARTOGRAF&Iacute;A</h2>
 			
             <h3>La Prehistoria (antes del 3000 a.C.)</h3>
-			<img src="imagen3.jpg" style="float: right; margin: 40px; width: 400px;">
+			<img src="./imagenes/imagen3.jpg" style="float: right; margin: 40px; width: 400px;">
 			<p>La cartografía tiene sus raíces en la prehistoria, cuando los seres humanos comenzaron a representar su entorno en forma de dibujos y símbolos.Los primeros mapas conocidos datan del período Paleolítico Superior, alrededor del 40.000 a.C. Estos mapas primitivos se encontraban en cuevas y rocas, y mostraban animales, humanos y elementos del paisaje.</p>
 			<p>Algunos ejemplos de estos mapas incluyen:</p>
 			<ul>
@@ -441,7 +87,7 @@
 			</ul>
 
 			
-			<img src="imagen5.jpg" style="float: right; margin: 40px; width: 400px;">
+			<img src="./imagenes/imagen5.jpg" style="float: right; margin: 40px; width: 400px;">
 			<h3>La Cartografía en la Antigüedad Clásica (3000 a.C. - 500 d.C.)</h3>
 			<p>Con el surgimiento de las civilizaciones antiguas, la cartografía se convirtió en una herramienta importante para la navegación, el comercio y la guerra. En Mesopotamia, los sumerios crearon mapas en tablillas de arcilla que mostraban la distribución de tierras y recursos. Algunos ejemplos de estos mapas incluyen:</p>
 			<ul>
@@ -449,7 +95,7 @@
 				<li>El mapa de Babilonia, encontrado en Irak, que data del período babilónico y muestra un mapa del mundo conocido.</li>
 			</ul>
 			<p>En Egipto, los faraones encargaron mapas para planificar la construcción de pirámides y canales. Los mapas egipcios solían mostrar el río Nilo y sus inundaciones anuales, que eran cruciales para la agricultura. </p>
-			<img src="imagen6.png" style="float: right; margin: 40px; width: 400px;">
+			<img src="./imagenes/imagen6.png" style="float: right; margin: 40px; width: 400px;">
 			<p>En Grecia, los filósofos y geógrafos como Eratóstenes y Estrabón desarrollaron teorías sobre la forma de la Tierra y crearon mapas que reflejaban su comprensión del mundo. Eratóstenes, en particular, es famoso por calcular con notable precisión la circunferencia de la Tierra utilizando la sombra de los rayos del sol en diferentes latitudes.</p>
 			
 			
@@ -467,14 +113,14 @@
 			
 			
 			<h3>La Cartografía en la Era de la Exploración (1500 - 1800 d.C.)</h3>
-			<img src="imagen7.jpg" style="float: right; margin: 40px; width: 400px;">
+			<img src="./imagenes/imagen7.jpg" style="float: right; margin: 40px; width: 400px;">
 			<p>La Era de la Exploración marcó un período de gran avance en la cartografía. Los descubrimientos de nuevos territorios y rutas marítimas llevaron a la creación de mapas más precisos y detallados. Los cartógrafos como Gerardus Mercator y Martin Waldseemüller crearon mapas que reflejaban la nueva comprensión del mundo.</p>
 			<p>La proyección de Mercator, desarrollada en el siglo XVI, se convirtió en un estándar para la navegación marítima y sigue siendo utilizada hoy en día. Sin embargo, también tiene limitaciones, como la distorsión de las formas y tamaños de los continentes cerca de los polos.</p>
 			<p>Algunos ejemplos de mapas de la Era de la Exploración incluyen:</p>
 			
 			<ul>
 				<li>El mapa de Waldseemüller, encontrado en Alemania, que data de 1507 y muestra un mapa del mundo conocido con el nombre "América" por primera vez.</li>
-				<img src="imagen8.webp" style="float: right; margin: 40px; width: 400px;">
+				<img src="./imagenes/imagen8.webp" style="float: right; margin: 40px; width: 400px;">
 				<li>El mapa de Mercator, encontrado en Bélgica, que data de 1569 y muestra un mapa del mundo conocido con la proyección de Mercator.</li>
 				
 			</ul>
@@ -517,7 +163,7 @@
 			<p>La cartografía al ser una disciplina que abarca una amplia variedad de técnicas y enfoques para representar el mundo que nos rodea posee diferentes tipos de cartografía que se enfocan en aspectos específicos de la realidad geográfica, desde la forma y características del terreno hasta la distribución de fenómenos sociales y económicos. Cada tipo de cartografía tiene sus propias herramientas y técnicas, y se utiliza para responder a preguntas y necesidades específicas. La elección del tipo de cartografía adecuado depende del propósito y el público objetivo, y puede variar desde la creación de mapas simples hasta la realización de análisis complejos. En general, los tipos de cartografía se pueden clasificar en categorías que reflejan la naturaleza de los datos y la forma en que se representan.</p>
 			
 			<h3> Cartografía Topográfica </h3>
-			<img src="imagen10.jpg" style="float: left; margin: 40px; width: 400px;">
+			<img src="./imagenes/imagen10.jpg" style="float: left; margin: 40px; width: 400px;">
 			<p>La cartografía topográfica se enfoca en la representación detallada de la forma y características del terreno, incluyendo la elevación, la pendiente y la hidrografía. Los mapas topográficos suelen incluir información sobre la vegetación, la geología y la infraestructura, y se utilizan para una variedad de propósitos, desde la planificación urbana hasta la gestión de recursos naturales. La cartografía topográfica es fundamental para entender la forma en que el terreno se comporta y cómo se puede utilizar de manera sostenible.</p>
 			<p>Los mapas topográficos pueden ser utilizados para identificar áreas de riesgo, como zonas de inundación o deslizamientos de tierra, y para planificar la construcción de infraestructuras como carreteras y puentes. La cartografía topográfica también es importante para la gestión de recursos naturales, como la planificación forestal y la conservación de la biodiversidad. Los mapas topográficos pueden ser creados utilizando una variedad de técnicas, incluyendo la fotogrametría y la teledetección. La precisión y la detalle de los mapas topográficos dependen de la escala y la calidad de los datos utilizados. En general, los mapas topográficos son una herramienta valiosa para cualquier persona que necesite entender la forma y características del terreno.</p>
 		
@@ -564,14 +210,14 @@
                 </details>
                 
                 <figure>
-                    <img src="imagen13.jpg" alt="Modelo de mapa para la prevención de desastres">
+                    <img src="./imagenes/imagen13.jpg" alt="Modelo de mapa para la prevención de desastres">
                     <figcaption>Aplicaciones del mapa topográfico</figcaption>
                 </figure>
             </aside>
 			
 			
 		<h3>Cartografía Temática</h3>
-		<img src="imagen14.png" style="float: left; margin: 40px; width: 400px;">
+		<img src="./imagenes/imagen14.png" style="float: left; margin: 40px; width: 400px;">
 		<p>La cartografía temática se enfoca en la representación de temas específicos, como la población, la economía, el clima o la geología. Los mapas temáticos suelen utilizar símbolos y colores para representar la distribución y la intensidad de los fenómenos estudiados, y se utilizan para analizar y visualizar datos complejos. La cartografía temática es una herramienta valiosa para la investigación científica y la toma de decisiones, ya que permite visualizar patrones y tendencias en los datos. Los mapas temáticos pueden ser utilizados para analizar la distribución de la población, la economía y los recursos naturales, y para identificar áreas de riesgo y oportunidad. </p>
 		<p>La cartografía temática también es importante para la planificación y la gestión de recursos, ya que puede ser utilizada para evaluar la efectividad de las políticas y programas. Los mapas temáticos pueden ser creados utilizando una variedad de técnicas, incluyendo la estadística y la modelización. La precisión y la detalle de los mapas temáticos dependen de la calidad de los datos utilizados y la habilidad del cartógrafo para representar la información de manera clara y concisa.</p>
 		
@@ -619,7 +265,7 @@
                 </details>
                 
                 <figure>
-                    <img src="imagen16.jpg" alt="mapa_tematico">
+                    <img src="./imagenes/imagen16.jpg" alt="mapa_tematico">
                     <figcaption>Aplicaciones del mapa tematico</figcaption>
                 </figure>
             </aside>
@@ -669,7 +315,7 @@
                 </details>
                 
                 <figure>
-                    <img src="imagen15.jpg" alt="Modelo de mapa para la prevención de desastres">
+                    <img src="./imagenes/imagen15.jpg" alt="Modelo de mapa para la prevención de desastres">
                     <figcaption>Aplicaciones del mapa digital</figcaption>
                 </figure>
             </aside>
@@ -685,6 +331,9 @@
             <h2 id="mapa">LOS MAPAS</h2>
 			<p>Los mapas también conocidos como cartas son <b> representaciones gráficas</b> de la realidad geográfica (Tierra) a través de una superficie plana.</p>
 			<h3>Elementos principales</h3>
+			<center>
+				<iframe style="max-width:100%" src="https://wordwall.net/es/embed/5af57f2fd66d48999c86e8208edcc4c5?themeId=43&templateId=22&fontStackId=0" width="700" height="420" frameborder="0" allowfullscreen></iframe>
+			</center>
 			<h4>Título</h4>
 				<ul>
 					<li>Indica el tema o propósito del mapa a través de palabras </li>
@@ -694,14 +343,15 @@
 					
 					
                 <h4>Escala</h4>
+				<img src="./imagenes/imagen9.jpg" style="float: right; margin: 40px; width: 400px;">
 				<ul>
 				<li> Relación entre las distancias del mapa y la realidad.</li> 
 					<li> Tipos de escalas:</li>
 						<ul>
 						 <li><b> Escala gráfica</b>: representada a través de una barra dividida en segmentos</li>
-						<br>					 			 
-						 <center><img src="escala1.jpg" alt="Escala gráfica" width= "300"></center>
-						 <br><br>
+						
+						 
+						 
 						 <li><b> Escala numérica</b>: Indica cuantas veces se debe de aumentar el mapa para que el dibujo esté a tamaño real. 
 						 <br>Se expresa con un número o una fracción.</br>
 						 <br> Ejemplo: <br> <center>
@@ -777,7 +427,7 @@
 					</div>
 				</section>
 	<script>
-		alert ("Bienvenidos a Cartoweb");
+		
 		document.getElementById('escalaForm').addEventListener('submit', function(e) {
 		e.preventDefault();
 			let distMapa = parseFloat(document.getElementById('distMapa').value);
@@ -795,52 +445,28 @@
 		resultadoDiv.classList.remove('hidden');
 		});
 	</script>			
+			
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+				<img src="./imagenes/imagen11.jpg" style="float: right; margin: 10px; width: 300px;">
 				<h4>Simbología o leyenda</h4>
 					<p>La <b>simbología cartográfica</b> es el conjunto de figuras, líneas, puntos y colores utilizados en los mapas para representar diferentes elementos del territorio.</p>
 					<p>La <b>leyenda</b> del mapa, por otro lado, es el apartado donde se explica el significado de estos símbolos, facilitando su interpretación.</p>
 					<p>En otras palabras, la simbología hace referencia a los signos en sí, mientras que la leyenda es la clave que permite entenderlos. </p>
-					<center>
-					<img src="leyenda.png" alt="Ejemplo de simbologia-leyenda" width="300">
-					</center>
-					<br>
+					
+					
+					
 					
 				<h4>Rosa de los vientos</h4>
 					<p> Es un <b>símbolo gráfico circular</b> que tiene marcado alrededor los rumbos en los que se divide la circunferencia del horizonte.</p>
 					<p>Se utiliza para representar las direcciones geográficas y cardinales en un mapa.</p>
-					<center>
-					<img src="vientos.jpg" alt="Ejemplo de rosa de los vientos" width="200"> 
-					</center>
+					
 					
 				<h4>Coordenadas geográficas</h4>
 					<p>Son las líneas horizontales y verticales que se aprecian, y sirven para ubicar cualquier lugar en el mapa al señalar su <em>latitud </em> <b> (líneas horizontales)</b> y <em>longitud </em><b>(líneas verticales)</b></p>
-					<center>
-					<img src="coordenadas.jpg" alt="Ejemplo de coordenas geográficas" width="200">
-					</center>
-					<br>
-					<br><br><br>			
-			
+							
+				<center><iframe width="900" height="600" frameborder="0" scrolling="no" allowfullscreen src="https://arcg.is/1fHCvv2"></iframe>
+				</center>
+				
 		</article>
 		
 	</section>
