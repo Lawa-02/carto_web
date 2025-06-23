@@ -64,7 +64,7 @@
 			color: #fff5ee;
         }
         
-		/* Estilos para la navegacion principal */
+		
 		.main-nav {
             background-color: #1d334a;                       
             color: white;                                   
@@ -72,19 +72,19 @@
             padding: 0.5rem 0;                              
         }
         
-        /* Elimina los puntos de lista en la navegacion */
+        
         .main-nav ul {
             list-style-type: none;                          
             text-align: center;                              
         }
         
-        /* Estilo para los elementos de la lista de navegacion */
+        
         .main-nav ul li {
             display: inline;                                
             margin-right: 20px;                              
         }
         
-        /* Estilos para los enlaces de navegacion */
+        
         .main-nav ul li a {
             color: white;                                 
             text-decoration: none;                             
@@ -94,7 +94,7 @@
             transition: background-color 0.3s, color 0.3s; 
         }    
         
-        /* Estilos para los enlaces de navegacion al pasar el mouse */
+        
         .main-nav ul li a:hover {
             background-color: #0056b3;                      
             color: #ffe;                                    
@@ -109,9 +109,6 @@
             margin: 80px;
 			
 		}
-		
-		
-		
 		
 		.simple-slider {
 			margin-inline: auto;
@@ -201,69 +198,69 @@
 
 			
 		aside {
-            flex: 1 1 25%; /* Establece que ocupe el 25% del espacio disponible */
-            background: #f5f9fc; /* Fondo azul muy claro para diferenciarlo */
-            padding: 1.5rem; /* Añade espaciado interno */
-            border-radius: 5px; /* Bordes redondeados */
-            border-left: 4px solid #2c5e86; /* Borde izquierdo más visible con color corporativo */
-            align-self: flex-start; /* Alinea al inicio para que no se estire verticalmente */
+            flex: 1 1 25%; 
+            background: #f5f9fc; 
+            padding: 1.5rem; 
+            border-radius: 5px; 
+            border-left: 4px solid #2c5e86; 
+            align-self: flex-start; 
         }
 
-        /* Título de la barra lateral */
+        
         aside h4 {
-            margin-top: 0; /* Elimina el margen superior del título */
-            color: #2c5e86; /* Color azul corporativo para el título */
+            margin-top: 0; 
+            color: #2c5e86; 
         }
 
-        /* Elementos desplegables para información adicional */
+        
         details {
-            margin-bottom: 1rem; /* Espacio inferior entre elementos desplegables */
-            background: white; /* Fondo blanco para el contenido */
-            border-radius: 5px; /* Bordes redondeados */
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra suave para efecto de elevación */
-            overflow: hidden; /* Oculta contenido desbordado */
+            margin-bottom: 1rem; 
+            background: white; 
+            border-radius: 5px; 
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+            overflow: hidden; 
         }
 
-        /* Cabecera de los elementos desplegables */
+       
         summary {
-            padding: 1rem; /* Añade espaciado interno */
-            background-color: #f5f5f5; /* Fondo gris claro para el encabezado */
-            cursor: pointer; /* Cambia el cursor para indicar que es clicable */
-            font-weight: 500; /* Establece un grosor de fuente semi-negrita */
-            border-bottom: 1px solid transparent; /* Borde inferior transparente por defecto */
+            padding: 1rem;
+            background-color: #f5f5f5; 
+            cursor: pointer; 
+            font-weight: 500; 
+            border-bottom: 1px solid transparent; 
         }
 		
 		details div {
-            padding: 1rem; /* Añade espaciado interno al contenido */
+            padding: 1rem;
         }
 
-        /* Estado abierto de los elementos desplegables */
+        
         details[open] summary {
-            border-bottom: 1px solid #ddd; /* Añade borde inferior cuando está abierto */
+            border-bottom: 1px solid #ddd; 
         }
 
-        /* Figuras para imágenes y diagramas */
+        
         figure {
-            margin: 2rem 0; /* Añade espacio vertical */
-            padding: 1rem; /* Añade espaciado interno */
-            background-color: #f8f8f8; /* Fondo ligeramente diferenciado */
-            border-radius: 5px; /* Bordes redondeados */
-            text-align: center; /* Centra el contenido de la figura */
+            margin: 2rem 0; 
+            padding: 1rem; 
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            text-align: center; 
         }
 
-        /* Imágenes dentro de las figuras */
+       
         figure img {
-            max-width: 100%; /* Asegura que las imágenes no desborden su contenedor */
-            height: auto; /* Mantiene la proporción de aspecto */
-            border-radius: 3px; /* Bordes ligeramente redondeados */
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 3px; 
         }
 
-        /* Leyendas para las figuras */
+        
         figcaption {
-            margin-top: 0.5rem; /* Espacio superior respecto a la imagen */
-            font-size: 0.9rem; /* Tamaño de texto más pequeño */
-            color: #666; /* Color gris para indicar texto secundario */
-            font-style: italic; /* Estilo itálico para diferenciar */
+            margin-top: 0.5rem; 
+            font-size: 0.9rem; 
+            color: #666; 
+            font-style: italic; 
         }
 		
 		.scale-section {
@@ -328,14 +325,14 @@
 			max-width: 100%;
 			
 			height: auto;
-			aspect-ratio: 16/9; /* Mantiene proporción de video */
-			border: none; /* Opcional: elimina bordes */
+			aspect-ratio: 16/9; 
+			border: none; 
 			}
 
 		img {
 			max-width: 100%;
 			height: auto;
-			display: block; /* Opcional: elimina espacio blanco debajo de la imagen */
+			display: block;
 		}
 		
 		.float-left {
@@ -353,10 +350,10 @@
 		display: none;
 		}
 		
-		footer {background-color: #0d3c56; /* Fondo oscuro para el pie de página */
-            color: white; /* Texto claro para contraste */
-            padding: 2rem 0; /* Añade espacio vertical */
-            margin-top: 2rem; /* Añade espacio superior */
+		footer {background-color: #0d3c56;
+            color: white; 
+            padding: 2rem 0; 
+            margin-top: 2rem; 
 			text-align: center;
         }
 		
@@ -383,7 +380,7 @@
             }
 			img[style*="float: left"] {
 				float: left !important;
-				margin: 0 40px 20px 0 !important; /* como estaba en tu estilo original */
+				margin: 0 40px 20px 0 !important; 
 			}
 			
 			img[style*="float: right"] {
