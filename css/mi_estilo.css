@@ -324,6 +324,31 @@
 		background-color: #f9f9f9;
 		}
 
+		iframe {
+			max-width: 100%;
+			
+			height: auto;
+			aspect-ratio: 16/9; /* Mantiene proporción de video */
+			border: none; /* Opcional: elimina bordes */
+			}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block; /* Opcional: elimina espacio blanco debajo de la imagen */
+		}
+		
+		.float-left {
+			float: left;
+			margin: 40px;
+			width: 400px;
+		}
+		.float-right {
+			float: right;
+			margin: 40px;
+			width: 400px;
+		}
+		
 		.scale-section .hidden {
 		display: none;
 		}
@@ -343,6 +368,15 @@
                 display: block;
                 margin: 0; 
             }
-        }
+			img[style*="float: left"] {
+				float: left !important;
+				margin: 0 40px 20px 0 !important; /* como estaba en tu estilo original */
+			}
+			
+			img[style*="float: right"] {
+				float: right !important;
+				margin: 0 0 20px 40px !important;
+			}
+		}
 	
   
