@@ -361,7 +361,7 @@
 		.contenedor {
             max-width: 600px;
             margin: 0 auto;
-		
+		}
 		
 		@media (max-width: 768px) {
             .header-container {
